@@ -17,7 +17,7 @@ def build_dataset_user_time():
             for weekday in range(7):
                 for hour_time in range(24):
                     dataset_user_time[user_info[0]][str(hour_time) + '_' + str(weekday)] = float(0)
-        dataset_user_time[user_info[0]][str(user_info[1]) + '_' + str(user_info[2])] = 1.0
+        dataset_user_time[user_info[0]][str(user_info[2]) + '_' + str(user_info[1])] = 1.0
     return dataset_user_time
 
 
@@ -35,7 +35,7 @@ def sim_rank_euclid(user_mac, dataset_user_time):
             for time in dataset_user_time[user]:
                 hour_distance = pow(float(dataset_user_time[user_mac][time])-float(dataset_user_time[user][time]), 2)
                 distance += hour_distance
-            sim = (1 / 1 + math.sqrt(distance), user)
+            sim = (1 / (1 + math.sqrt(distance)), user)
             # 相似度列表结构[(相似度，用户mac),...]，降序
             sim_rank.append(sim)
     sim_rank.sort()
@@ -49,7 +49,7 @@ if __name__ == '__main__':
         print (dataset_user_time)
         print (sim_rank_euclid('70720d07f7e0', dataset_user_time))
     except Exception as e:
-        print ('用户世间相似度列表生成失败')
+        print ('用户时间相似度列表生成失败')
         print (Exception, ':', e)
     else:
         print ('用户时间相似度列表生成成功')
