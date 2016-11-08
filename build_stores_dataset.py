@@ -39,8 +39,8 @@ if __name__ == '__main__':
         start = time.clock()
         stores_dataset = build_dataset()
         final = time.clock()
-    except Exception, e:
-        print '构建商户数据集失败'
-        print Exception, ':', e
+    except Exception as e:
+        print('构建商户数据集失败')
+        print(Exception, ':', e)
     else:
-        print '构建商户数据集成功，用时: %f s' % (final - start)
+        print('构建商户数据集成功，用时: %f s' % (final - start))

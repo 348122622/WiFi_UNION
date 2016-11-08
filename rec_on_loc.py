@@ -21,11 +21,11 @@ def recommend(user_mac, data_cold_start):
 if __name__ == '__main__':
     try:
         data_cold_start = trans_pickle.load('coldStartData')
-    except Exception, e:
-        print '从本地载入冷启动数据出错'
-        print Exception, ':', e
+    except Exception as e:
+        print('从本地载入冷启动数据出错')
+        print (Exception, ':', e)
     else:
-        print '载入冷启动数据成功'
+        print ('载入冷启动数据成功')
 
     result_dict = recommend('70720d07f7e0', data_cold_start)
-    print '基于位置的推荐结果：', trans_json.data_to_json(result_dict)
+    print ('基于位置的推荐结果：', trans_json.data_to_json(result_dict))

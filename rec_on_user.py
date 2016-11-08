@@ -49,9 +49,9 @@ def recommend(user_mac, filename_cold_start, sim_rank):
 if __name__ == '__main__':
     dataset_user_time = sim_user_time.build_dataset_user_time()
     sim_time_rank = sim_user_time.sim_rank_euclid('70720d07f7e0', dataset_user_time)
-    print sim_time_rank
+    print (sim_time_rank)
     dataset_user_loc = sim_user_loc.build_dataset_user_loc()
     sim_loc_rank = sim_user_loc.sim_rank_euclid('70720d07f7e0', dataset_user_loc)
-    print sim_loc_rank
-    print sim_rank(sim_loc_rank, sim_time_rank)
-    print trans_json.data_to_json(recommend('70720d07f7e0', 'coldStartData', sim_rank(sim_loc_rank, sim_time_rank)))
+    print (sim_loc_rank)
+    print (sim_rank(sim_loc_rank, sim_time_rank))
+    print (trans_json.data_to_json(recommend('70720d07f7e0', 'coldStartData', sim_rank(sim_loc_rank, sim_time_rank))))

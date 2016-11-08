@@ -80,7 +80,7 @@ if __name__ == '__main__':
     # 构建用户位置数据集{'用户'：{'纬度':'','经度':''},...}
     # print dataset_user_loc
     final_load_users = time.clock()
-    print '读取用户信息用时：%f s' % (final_load_users - start_load_users)
+    print('读取用户信息用时：%f s' % (final_load_users - start_load_users))
 
     start_load_stores = time.clock()
 
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     # # 查看商户经纬度信息
 
     final_load_stores = time.clock()
-    print "读取商户信息用时： %f s" % (final_load_stores - start_load_stores)
+    print("读取商户信息用时： %f s" % (final_load_stores - start_load_stores))
 
     start_cold_start = time.clock()
 
@@ -99,6 +99,6 @@ if __name__ == '__main__':
     # # 构建冷启动数据集
     # print trans_json.data_to_json(data_cold_start)
     final_cold_start = time.clock()
-    print '构建冷启动数据集用时：%f s' % (final_cold_start - start_cold_start)
+    print('构建冷启动数据集用时：%f s' % (final_cold_start - start_cold_start))
 
     trans_pickle.dump('coldStartData', data_cold_start)

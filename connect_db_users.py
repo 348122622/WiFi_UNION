@@ -24,8 +24,8 @@ def connect_db():
 if __name__ == '__main__':
     try:
         connect_db()
-    except Exception, e:
-        print '连接数据库失败'
-        print Exception, ":", e
+    except Exception as e:
+        print('连接数据库失败')
+        print (Exception, ":", e)
     else:
-        print '连接数据库成功'
+        print ('连接数据库成功')

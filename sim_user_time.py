@@ -46,12 +46,12 @@ def sim_rank_euclid(user_mac, dataset_user_time):
 if __name__ == '__main__':
     try:
         dataset_user_time = build_dataset_user_time()
-        print dataset_user_time
-        print sim_rank_euclid('70720d07f7e0', dataset_user_time)
-    except Exception, e:
-        print '用户世间相似度列表生成失败'
-        print Exception, ':', e
+        print (dataset_user_time)
+        print (sim_rank_euclid('70720d07f7e0', dataset_user_time))
+    except Exception as e:
+        print ('用户世间相似度列表生成失败')
+        print (Exception, ':', e)
     else:
-        print '用户时间相似度列表生成成功'
+        print ('用户时间相似度列表生成成功')
 
 

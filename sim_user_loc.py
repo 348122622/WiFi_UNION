@@ -46,10 +46,10 @@ def sim_rank_euclid(user_mac ,dataset_user_loc):
 if __name__ == '__main__':
     try:
         dataset_user_loc = build_dataset_user_loc()
-        print dataset_user_loc
-        print sim_rank_euclid('70720d07f7e0', dataset_user_loc)
-    except Exception, e:
-        print '用户位置相似列表生成失败'
-        print Exception, ':', e
+        print (dataset_user_loc)
+        print (sim_rank_euclid('70720d07f7e0', dataset_user_loc))
+    except Exception as e:
+        print ('用户位置相似列表生成失败')
+        print (Exception, ':', e)
     else:
-        print '用户位置相似列表生成成功'
+        print ('用户位置相似列表生成成功')
